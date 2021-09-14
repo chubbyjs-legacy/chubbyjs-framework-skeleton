@@ -1,0 +1,72 @@
+{
+  "name": "@chubbyjs/chubbyjs-framework-skeleton",
+  "version": "1.0.0",
+  "description": "A minimal skeleton for chubbyjs-framework.",
+  "keywords": [
+    "chubbyjs",
+    "framework",
+    "skleton"
+  ],
+  "author": "Dominik Zogg",
+  "license": "MIT",
+  "repository": "chubbyjs/chubbyjs-framework-skeleton",
+  "scripts": {
+    "cs-fix": "prettier --write src tests",
+    "cs": "prettier --check src tests",
+    "test": "jest",
+    "infection": "stryker run",
+    "build": "tsc",
+    "prepare": "rm -Rf dist && npm run build && npm run cs && npm run test",
+    "start": "tsc-watch --onSuccess \"node ./dist/public/index.js\""
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 100
+      }
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@chubbyjs/chubbyjs-framework-router-path-to-regexp": "^1.0.1",
+    "@chubbyjs/chubbyjs-framework": "^1.1.7",
+    "@chubbyjs/chubbyjs-http-message": "^1.1.1",
+    "@chubbyjs/chubbyjs-laminas-config": "^1.0.2",
+    "@chubbyjs/chubbyjs-node-psr-http-message-bridge": "^1.2.1",
+    "@chubbyjs/chubbyjs-pino-psr": "^1.0.0",
+    "@types/commander": "^2.12.2",
+    "@types/node": "^14",
+    "commander": "^8.2.0"
+  },
+  "devDependencies": {
+    "@chubbyjs/chubbyjs-mock": "^1.1.1",
+    "@stryker-mutator/core": "^5.3.0",
+    "@stryker-mutator/jest-runner": "^5.3.0",
+    "@types/jest": "^27.0.1",
+    "jest": "^27.1.0",
+    "prettier": "2.3.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "tsc-watch": "^4.5.0",
+    "typescript": "^4.4.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
