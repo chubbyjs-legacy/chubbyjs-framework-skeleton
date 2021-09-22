@@ -46,6 +46,26 @@ git init
 npm start
 ```
 
+## Structure
+
+### Command
+
+Commands is code that is meant to be executed on command line.
+
+ * [src/Command][9]
+
+### RequestHandler
+
+RequestHandler alias Controller, or Controller actions to be more precise.
+
+ * [src/RequestHandler][10]
+
+### ServiceFactory
+
+Service factories are the glue code of the dependeny injection container.
+
+ * [App\ServiceFactory][11]
+
 ## Copyright
 
 Dominik Zogg 2021
@@ -58,3 +78,7 @@ Dominik Zogg 2021
 [6]: https://www.npmjs.com/package/@chubbyjs/chubbyjs-node-psr-http-message-bridg
 [7]: https://www.npmjs.com/package/@chubbyjs/chubbyjs-pino-psr
 [8]: https://www.npmjs.com/package/commander
+
+[9]: src/Command
+[10]: src/RequestHandler
+[11]: src/ServiceFactory
