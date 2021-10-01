@@ -2,6 +2,7 @@ import PathToRegexpRouteMatcher from "@chubbyjs/chubbyjs-framework-router-path-t
 import PathToRegexpUrlGenerator from "@chubbyjs/chubbyjs-framework-router-path-to-regexp/dist/PathToRegexpUrlGenerator";
 import ErrorMiddleware from "@chubbyjs/chubbyjs-framework/dist/Middleware/ErrorMiddleware";
 import RouteMatcherMiddleware from "@chubbyjs/chubbyjs-framework/dist/Middleware/RouteMatcherMiddleware";
+import Routes from "@chubbyjs/chubbyjs-framework/dist/Router/Routes";
 import ResponseFactory from "@chubbyjs/chubbyjs-http-message/dist/Factory/ResponseFactory";
 import LaminasFactoryInterface from "@chubbyjs/chubbyjs-laminas-config/dist/LaminasFactoryInterface";
 import PinoPsrLogger from "@chubbyjs/chubbyjs-pino-psr/dist/PinoPsrLogger";
@@ -45,7 +46,6 @@ export default (env: string): Config => {
         dependencies: {
             factories: new Map<string, LaminasFactoryInterface>([
                 ['Middleware[]', MiddlewaresFactory],
-                ['Routes', RoutesFactory],
                 [CleanDirectoriesCommand.name, CleanDirectoriesCommandFactory],
                 [ErrorMiddleware.name, ErrorMiddlewareFactory],
                 [PathToRegexpRouteMatcher.name, PathToRegexpRouteMatcherFactory],
@@ -54,6 +54,7 @@ export default (env: string): Config => {
                 [PinoPsrLogger.name, PinoPsrLoggerFactory],
                 [ResponseFactory.name, ResponseFactoryFactory],
                 [RouteMatcherMiddleware.name, RouteMatcherMiddlewareFactory],
+                [Routes.name, RoutesFactory],
             ]),
         },
         directories: new Map([
